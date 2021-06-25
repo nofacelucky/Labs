@@ -1,0 +1,56 @@
+// Лабораторная работа 7
+// Часть 1
+
+#include <iostream>
+using namespace std;
+
+double avg_harm(double x, double y)
+{
+    double avg;
+    x = 1/x;
+    y = 1/y;
+    avg = 2/(x + y);
+    return avg;
+}
+
+void main()
+{
+    setlocale(LC_ALL, "Russian");
+    double doub_1, doub_2;
+    cout << "Введите 2 числа\n";
+    cin >> doub_1;
+    cin >> doub_2;
+    cout << "Среднее гармоническое значение " << doub_1 << " и " << doub_2 << " = " << avg_harm(doub_1, doub_2) << endl;
+    system("pause");
+}
+
+
+
+// Часть 2
+#include <iostream>
+
+using namespace std;
+
+
+void sort(double& a, double& b, double& c)
+{
+	double x, y, z;
+
+	if (a <= b && b <= c) { x = a; y = b; z = c; }
+	else if (b <= a && a <= c) { x = b; y = a; z = c; }
+	else if (c <= b && b <= a) { x = c; y = b; z = a; }
+	else if (a <= c && c <= b) { x = a; y = c; z = b; }
+	else if (b <= c && c <= a) { x = b; y = c; z = a; }
+	else { x = c; y = a; z = b; }
+
+	a = x; b = y; c = z;
+}
+void main()
+{
+    setlocale(LC_ALL, "Russian");
+    double doub_1 = 5.5, doub_2 = 7.5, doub_3 = 3.5;
+    cout << doub_1 << " " << doub_2 << " " << doub_3 << endl;
+    sort(doub_1, doub_2, doub_3);
+    cout << "Наименьшее = " << doub_1 << ", среднее = " << doub_2 << ", наибольшее = " << doub_3 << endl;
+    system("pause");
+}
