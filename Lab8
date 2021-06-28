@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	//Первая часть
+	int chis;
+	do {
+		cout << "Введите 5-ти значное число:";
+		cin >> chis;
+	} while (chis <= 9999 || chis>99999);
+	// Если число больше 9999 и меньше или равно 99999, значит оно пятизначное 
+	for (int i = 0; i < 5; i++) {
+		cout << endl << chis % 10;
+		chis /= 10;
+	}
+
+	//Вторая часть
+	cout << "\n\nВведите символ:";
+	char sim;
+	cin >> sim;
+	sim = toupper(sim);
+	cout << "\nСимвол в верхнем регистре:" << sim;
+
+	//Третья часть
+	int sred = 0, kol = 0, mas[10] = { 1,2,3,4,5 };
+	for (int i = 0; i < 10; i++) {
+		sred += mas[i];
+		if(mas[i] != 0) kol++;
+	}
+	cout << "\n\nСреднее арифметическое:" << float(sred) / kol;
+}
